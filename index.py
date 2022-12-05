@@ -1,4 +1,4 @@
-# Copyright 2022 <Votre nom et code permanent>
+# Copyright 2022 <ZHANG XiDuo, ZHAX18089306>
 #
 # Licensed under the Apache License, Version 2.0 (the "License");
 # you may not use this file except in compliance with the License.
@@ -37,4 +37,5 @@ def close_connection(exception):
 @app.route('/')
 def form():
     # À remplacer par le contenu de votre choix.
-    return render_template('form.html')
+    random_animals = get_db().get_animaux()
+    return render_template('home.html', animals = random_animals)
