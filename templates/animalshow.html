@@ -1,0 +1,22 @@
+{% extends "layouts/header.html" %}
+{% block head %}
+<link rel="stylesheet" href="/styles/adoption.css">
+{% endblock %}>
+
+{% block content %}
+<div class="body">
+  <div class="animal-detail">
+    <div class="animal-imgage-container">
+      <img src="/images/{{animal.espece}}.jpeg" onerror="handleErrorImg(this)">
+    </div>
+    <p>Nom: {{ animal.nom }}</p>
+    <p>Espèce: {{ animal.espece }}</p>
+    <p>Race: {{ animal.race }}</p>
+    <p>Âge: {{ animal.age }}</p>
+    <p>Description: {{ animal.description }}</p>
+    <p>@Eamil: {{animal.courriel }}</p>
+    <p>Adresse: {{ animal.adresse }}</p>
+    <p>Code Postal: {{ animal.cp }}</p>
+  </div>
+</div>
+{% endblock %}

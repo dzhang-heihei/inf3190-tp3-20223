@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+  <script type="text/javascript" src="/js/script.js"></script>
+  <meta charset="UTF-8">
+  <link rel="stylesheet" href="/styles/styles.css">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+  {% block head %}{% endblock %}
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewpveroort" content="width=device-width, initial-scale=1.0">
+  <title>Famille des animaux</title>
+</head>
+<body>
+  <!-- Navbar -->
+  <div class="head-nav">
+    <div class="head-nav-container">
+      <div class="nav-elements">
+        <ul>
+          <li><a href="/">Accueil</a></li>
+          <li><a href="/adopt">Mise en adoptation</a></li>
+        </ul>
+      </div>
+      <div class="search-container">
+        <form name="search_form" action="/search" method="get" onsubmit="return searchForm()">
+          <input type="text" placeholder="Recherche.." name="query">
+          <button type="submit"><i class="fa fa-search"></i></button>
+        </form>
+      </div>
+    </div>
+  </div>
+  {% block content %}{% endblock %}
+</body>
+</html>

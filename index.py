@@ -12,10 +12,11 @@
 # See the License for the specific language governing permissions and
 # limitations under the License.
 
-from flask import Flask
+from flask import Flask, request
 from flask import render_template
 from flask import g
 from .database import Database
+import random
 
 app = Flask(__name__, static_url_path="", static_folder="static")
 
@@ -35,7 +36,24 @@ def close_connection(exception):
 
 
 @app.route('/')
-def form():
-    # À remplacer par le contenu de votre choix.
-    random_animals = get_db().get_animaux()
+def home():
+    random_animals = random.sample(get_db().get_animaux(), k=5)
     return render_template('home.html', animals = random_animals)
+
+@app.route('/adopt')
+def need_adopt():
+    return render_template('adoption.html')
+
+@app.route('/animal/<id>')
+def animal_id(id):
+    animal = get_db().get_animal(id)
+    return render_template('animalshow.html', animal = animal)
+
+@app.route('/animal/search/<id>')
+def search(id):
+    animal = get_db().get_animal(id)
+    return render_template('animalshow.html', animal = animal)
+
+@app.errorhandler(404)
+def not_found(e):
+    return render_template("404.html"), 404

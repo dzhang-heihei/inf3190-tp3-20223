@@ -1,0 +1,10 @@
+{% macro renderAnimal(animal) %}
+  <div class="animal-container">
+    <a href="/animal/{{animal.id}}">
+      <img src="/images/{{animal.espece}}.jpeg"
+            class="animal-image"
+            onerror="handleErrorImg(this)">
+    </a>
+    <p><a href="/animal/{{animal.id}}">{{ animal.nom }} {{ animal.espece }}</a></p>
+  </div>
+{% endmacro %}

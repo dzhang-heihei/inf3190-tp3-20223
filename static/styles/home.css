@@ -1,0 +1,15 @@
+.animal-row {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 10%
+}
+
+img {
+  max-height:300px;
+  max-width: 300px;
+  border: solid 1px black;
+}
+
+a {
+  text-decoration: none;
+}
