@@ -1,3 +1,11 @@
 .animal-detail {
   display: flex;
 }
+
+.animal-image-container {
+  margin-right: 30px;
+}
+
+.animal-info {
+  flex-direction: column;
+}

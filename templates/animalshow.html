@@ -6,17 +6,22 @@
 {% block content %}
 <div class="body">
   <div class="animal-detail">
-    <div class="animal-imgage-container">
+    <div class="animal-image-container">
       <img src="/images/{{animal.espece}}.jpeg" onerror="handleErrorImg(this)">
     </div>
-    <p>Nom: {{ animal.nom }}</p>
-    <p>Espèce: {{ animal.espece }}</p>
-    <p>Race: {{ animal.race }}</p>
-    <p>Âge: {{ animal.age }}</p>
-    <p>Description: {{ animal.description }}</p>
-    <p>@Eamil: {{animal.courriel }}</p>
-    <p>Adresse: {{ animal.adresse }}</p>
-    <p>Code Postal: {{ animal.cp }}</p>
+
+    <div class="animal-info">
+      <p>Nom: {{ animal.nom }}</p>
+      <p>Espèce: {{ animal.espece }}</p>
+      <p>Race: {{ animal.race }}</p>
+      <p>Âge: {{ animal.age }}</p>
+      <p>Description: {{ animal.description }}</p>
+      <p>Adresse: {{ animal.adresse }}</p>
+      <p>Code Postal: {{ animal.cp }}</p>
+
+      <a href="mailto:{{ animal.courriel }}"><button class="button">Contacter</button></a>
+
+    </div>
   </div>
 </div>
 {% endblock %}
