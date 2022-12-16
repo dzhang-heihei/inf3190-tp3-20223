@@ -50,18 +50,27 @@ function formElementsValidation() {
   } else if (animalName.length < 3 || animalName.length > 20) {
     document.getElementById("animal-name-err").innerHTML = nameMessage;
     validated = false
+  } else if (!commaEx.test(animalName)) {
+    document.getElementById("animal-name-err").innerHTML = commaFormatMessage;
+    validated = false
   }
 
   // specie validation
   if (specieVal == "") {
     document.getElementById("specie-err").innerHTML = fieldEmptyMessage;
     validated = false;
+  } else if (!commaEx.test(specieVal)) {
+    document.getElementById("specie-err").innerHTML = commaFormatMessage;
+    validated = false
   }
 
   // race validation
   if (raceVal == "") {
     document.getElementById("race-err").innerHTML = fieldEmptyMessage;
     validated = false;
+  } else if (!commaEx.test(raceVal)) {
+    document.getElementById("race-err").innerHTML = commaFormatMessage;
+    validated = false
   }
 
   // age validation
@@ -71,26 +80,39 @@ function formElementsValidation() {
   } else if (ageVal < 0 || ageVal > 30) {
     document.getElementById("age-err").innerHTML = ageMessage;
     validated = false;
+  } else if (!commaEx.test(ageVal)) {
+    document.getElementById("age-err").innerHTML = commaFormatMessage;
+    validated = false
   }
 
   // email validation
   if(emailVal == "") {
     document.getElementById("email-err").innerHTML = fieldEmptyMessage;
     validated = false;
-  }else if (!emailRegx.test(emailVal)) {
-    document.getElementById("email-err").innerHTML = nameFormatMessage;
+  } else if (!emailRegx.test(emailVal)) {
+    document.getElementById("email-err").innerHTML = emailFormatMessage;
     validated = false;
+  } else if (!commaEx.test(emailVal)) {
+    document.getElementById("email-err").innerHTML = commaFormatMessage;
+    validated = false
   }
 
   // addresse validation
   if (addresseVal == "") {
     document.getElementById("addresse-err").innerHTML = fieldEmptyMessage;
     validated = false;
+  } else if (!commaEx.test(addresseVal)) {
+    document.getElementById("addresse-err").innerHTML = commaFormatMessage;
+    validated = false
   }
+
   // city validation
   if (cityVal == "") {
     document.getElementById("city-err").innerHTML = fieldEmptyMessage;
     validated = false;
+  } else if (!commaEx.test(cityVal)) {
+    document.getElementById("city-err").innerHTML = commaFormatMessage;
+    validated = false
   }
 
   // postal code validation
@@ -100,12 +122,18 @@ function formElementsValidation() {
   } else if (!postalRegx.test(postalVal)) {
     document.getElementById("postal-err").innerHTML = postalFormatMessage;
     validated = false
+  } else if (!commaEx.test(postalVal)) {
+    document.getElementById("postal-err").innerHTML = commaFormatMessage;
+    validated = false
   }
 
   // description validation
   if (descriptionVal == "") {
     document.getElementById("description-err").innerHTML = fieldEmptyMessage;
     validated = false;
+  } else if (!commaEx.test(descriptionVal)) {
+    document.getElementById("description-err").innerHTML = commaFormatMessage;
+    validated = false
   }
 
   return validated;

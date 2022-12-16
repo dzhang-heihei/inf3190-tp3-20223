@@ -7,8 +7,8 @@
 
 {% block content %}
 <div class="body">
+  <p>Résultat trouvé: {{ animals|length }}</p>
   <div class="animal-row">
-    <!-- <p>Résultat trouvé: {{ animals|length }}</p> -->
     {% if animals|length > 0%}
       {% for animal in animals %}
         {{ renderAnimal(animal) }}

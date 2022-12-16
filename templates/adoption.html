@@ -1,10 +1,5 @@
 {% extends "layouts/header.html" %}
 
-{% block head %}
-<!-- <link rel="stylesheet" href="vendor/styles/order.css"> -->
-<script type="text/javascript" src="/js/script.js"></script>
-{% endblock %}>
-
 {% block content %}
 <div class="body">
   <div class="adoption-form-container">
@@ -24,7 +19,7 @@
 
       <span id="age-err" class="error"></span><br>
       <label for="animal-age">Âge</label><br>
-      <input type="text" name="animal_age" id="animal-age"><br>
+      <input type="number" name="animal_age" id="animal-age"><br>
 
       <span id="email-err" class="error"></span><br>
       <label for="email">Adresse courriel</label><br>
