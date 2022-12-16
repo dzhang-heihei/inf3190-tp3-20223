@@ -1,26 +1,53 @@
 {% extends "layouts/header.html" %}
 
+{% block head %}
+<!-- <link rel="stylesheet" href="vendor/styles/order.css"> -->
+<script type="text/javascript" src="/js/script.js"></script>
+{% endblock %}>
+
 {% block content %}
 <div class="body">
   <div class="adoption-form-container">
-    <label for="animal-name">Nom de l'animal</label><br>
-    <input type="text" name="animal_name" id="animal-name"><br>
+    <form name="formulaire" action="/submit" method="post" onsubmit="return submitForm()" >
 
-    <label for="animal-age">Âge</label><br>
-    <input type="text" name="animal_age" id="animal-age"><br>
+      <span id="animal-name-err" class="error"></span><br>
+      <label for="animal-name">Nom de l'animal</label><br>
+      <input type="text" name="animal_name" id="animal-name"><br>
 
-    <label for="email">Adresse courriel</label><br>
-    <input type="email" name="email" id="email"><br>
+      <span id="specie-err" class="error"></span><br>
+      <label for="animal-specie">Espece</label><br>
+      <input type="text" name="animal_specie" id="animal-specie"><br>
 
-    <label for="addresse">Adresse civique</label><br>
-    <input type="text" name="addresse" id="addresse"><br>
+      <span id="race-err" class="error"></span><br>
+      <label for="animal-race">Race</label><br>
+      <input type="text" name="animal_race" id="animal-race"><br>
 
-    <label for="city">Ville</label><br>
-    <input type="text" name="city" id="city"><br>
+      <span id="age-err" class="error"></span><br>
+      <label for="animal-age">Âge</label><br>
+      <input type="text" name="animal_age" id="animal-age"><br>
 
-    <label for="postal">Code postal</label><br>
-    <input type="text" name="postal" id="postal"><br>
+      <span id="email-err" class="error"></span><br>
+      <label for="email">Adresse courriel</label><br>
+      <input type="email" name="email" id="email"><br>
 
+      <span id="addresse-err" class="error"></span><br>
+      <label for="addresse">Adresse civique</label><br>
+      <input type="text" name="addresse" id="addresse"><br>
+
+      <span id="city-err" class="error"></span><br>
+      <label for="city">Ville</label><br>
+      <input type="text" name="city" id="city"><br>
+
+      <span id="postal-err" class="error"></span><br>
+      <label for="postal">Code postal</label><br>
+      <input type="text" name="postal" id="postal"><br>
+
+      <span id="description-err" class="error"></span><br>
+      <label for="description">Description</label><br>
+      <textarea id="description" name="description" rows="4" cols="30"></textarea> <br>
+
+      <button class="button" type="submit">Soumettre</button>
+    </form>
   </div>
 </div>
 {% endblock %}

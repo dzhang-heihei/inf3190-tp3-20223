@@ -1,0 +1,19 @@
+{% extends "layouts/header.html" %}
+{% from "layouts/animal_component.html" import renderAnimal %}
+
+{% block head %}
+  <link rel="stylesheet" href="/styles/home.css">
+{% endblock %}>
+
+{% block content %}
+<div class="body">
+  <div class="animal-row">
+    <!-- <p>Résultat trouvé: {{ animals|length }}</p> -->
+    {% if animals|length > 0%}
+      {% for animal in animals %}
+        {{ renderAnimal(animal) }}
+      {% endfor %}
+    {% endif %}
+  </div>
+</div>
+{% endblock %}
