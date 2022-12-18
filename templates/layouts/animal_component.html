@@ -1,10 +1,16 @@
 {% macro renderAnimal(animal) %}
+{% block head %}
+  <link rel="stylesheet" href="/styles/animal_component.css">
+{% endblock %}
+
   <div class="animal-container">
     <a href="/animal/{{animal.id}}">
       <img src="/images/{{animal.espece}}.jpeg"
             class="animal-image"
             onerror="handleErrorImg(this)">
+
+      <p>{{ animal.nom }}</p>
+      <p class="animal-description">{{ animal.description }}</p>
     </a>
-    <p><a href="/animal/{{animal.id}}">{{ animal.nom }} {{ animal.espece }}</a></p>
   </div>
 {% endmacro %}
